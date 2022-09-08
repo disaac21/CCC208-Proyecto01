@@ -12,10 +12,10 @@ Funciones::Funciones(){
 void Funciones::SwitchFiguras(vector<string> Parametros) {
 
     //Este Bloque Solo Es Chequeo
-    cout << " --- Print Previo --- " << endl << "Parametros.size() = " << Parametros.size() << endl << "Parametros:" << endl;
-    for (int i = 0; i < Parametros.size(); i++)
-        cout << i << " - " << Parametros[i] << endl;
-    cout << "\n --- Post Print --- " << endl;
+    // cout << " --- Print Previo --- " << endl << "Parametros.size() = " << Parametros.size() << endl << "Parametros:" << endl;
+    // for (int i = 0; i < Parametros.size(); i++)
+    //     cout << i << " - " << Parametros[i] << endl;
+    // cout << "\n --- Post Print --- " << endl;
 
     if (Parametros.size() <= 2)
         MensajeError(Parametros);

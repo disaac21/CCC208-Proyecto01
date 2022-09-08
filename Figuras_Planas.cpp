@@ -1,8 +1,8 @@
-#include <iostream>
+//#include <iostream>
 #include <string>
 #include <vector>
 #include "Funciones.h"
-using namespace std;
+//using namespace std;
 
 int main(int argc, char *argv[]) {
     vector<string> parametros;
