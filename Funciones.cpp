@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <fstream>
+#include <windows.h>
 #include "Funciones.h"
 using namespace std;
 
@@ -16,6 +17,11 @@ void Funciones::SwitchFiguras(vector<string> Parametros) {
     // for (int i = 0; i < Parametros.size(); i++)
     //     cout << i << " - " << Parametros[i] << endl;
     // cout << "\n --- Post Print --- " << endl;
+
+    
+    SetConsoleCP(CP_UTF8);
+    SetConsoleOutputCP(CP_UTF8);
+
 
     if (Parametros.size() <= 2)
         MensajeError(Parametros);
