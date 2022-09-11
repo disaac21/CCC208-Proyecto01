@@ -29,6 +29,16 @@ void Funciones::SwitchFiguras(vector<string> Parametros) {
     }
 }
 
+/*
+COMENTARIO A TENER EN CUENTA - EXTRAIDO DEL PDF
+Por cada figura se debe crear una clase con su respectivo .h y .cpp, misma que se
+instanciera en alguna función del archivo de funciones.
+
+La implementacion de la gráfica debe estar en un metodo llamado Dibujar en la clase,
+
+TAMBIÉN: Revisar Referencias
+*/
+
 void Funciones::MensajeError() {
     ifstream ArchivoNoParametros("NoParametros.txt", ios::in);
     string line;
