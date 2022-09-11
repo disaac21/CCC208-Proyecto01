@@ -12,6 +12,7 @@ class Funciones {
     public:
         Funciones();
         void SwitchFiguras(vector<string>);
-        void MensajeError(vector<string>);
+        void MensajeError();
+        void CargarArchivo(vector<string>);
 
 };
