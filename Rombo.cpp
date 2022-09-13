@@ -1,11 +1,7 @@
 #include "Rombo.h"
-#include <iostream>
-#include<string>
+
 using namespace std;
 
-Rombo::Rombo() {
-
-}
 Rombo::Rombo(int a, int d, int D) {
     this->a = a;
     this->d = d;
@@ -33,4 +29,17 @@ void Rombo::setd(int d){
 }
 void Rombo::setD(int D){
     this->D = D;
+}
+
+void Rombo::Dibujar() {
+    ifstream ArchivoRombo("Rombo.txt", ios::in);
+
+    if (!ArchivoRombo) {
+        cerr << "No se pudo abrir el archivo" << endl;
+        exit(EXIT_FAILURE);
+    }
+
+    string line;
+    while (getline(ArchivoRombo, line))
+        cout << line << endl;
 }

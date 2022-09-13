@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
-#include<string>
+#include <string>
+#include <fstream>
+
 using namespace std;
 
 class Paralelogramo {
@@ -9,7 +11,6 @@ class Paralelogramo {
     int h;
 
     public:
-        Paralelogramo();
         Paralelogramo(int a, int b, int h);
         ~Paralelogramo();
 
@@ -21,4 +22,5 @@ class Paralelogramo {
         void setb(int);
         void seth(int);
 
+        void Dibujar();
 };

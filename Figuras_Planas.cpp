@@ -1,9 +1,8 @@
 #include "Funciones.h" //include de archivo header con todas las funciones, Funciones.h no es una clase, es un archivo con funciones adentro
 
-int main(int argc, char *argv[]) {
-    SwitchFiguras(argc, argv); //SwitchFiguras es una funcion de Funciones.h, agarra como parametros a argc(# de argumentos) y argv(array de strings)
+int main(int argc, char* argv[]) {
+    MainFunciones(argc, argv);
 }
-
 /*
 Anteriormente Funciones.h trabajaba como objeto,
 ahora que simplemente es un archivo con funciones,

@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
-#include<string>
+#include <string>
+#include <fstream>
+
 using namespace std;
 
 class Cometa {
@@ -10,7 +12,6 @@ class Cometa {
     int D;
 
     public:
-        Cometa();
         Cometa(int a, int b, int d, int D);
         ~Cometa();
 
@@ -24,4 +25,5 @@ class Cometa {
         void setd(int);
         void setD(int);
 
+        void Dibujar();
 };

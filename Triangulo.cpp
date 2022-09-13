@@ -1,11 +1,7 @@
 #include "Triangulo.h"
-#include <iostream>
-#include<string>
+
 using namespace std;
 
-Triangulo::Triangulo() {
-
-}
 Triangulo::Triangulo(int a, int b, int c, int h) {
     this->a = a;
     this->b = b;
@@ -40,4 +36,17 @@ void Triangulo::setc(int c){
 }
 void Triangulo::seth(int h){
     this->h = h;
+}
+
+void Triangulo::Dibujar() {
+    ifstream ArchivoTriangulo("Triangulo.txt", ios::in);
+
+    if (!ArchivoTriangulo) {
+        cerr << "No se pudo abrir el archivo" << endl;
+        exit(EXIT_FAILURE);
+    } //Se verifica si el archivo se abrio correctamente
+
+    string line;
+    while (getline(ArchivoTriangulo, line))
+        cout << line << endl; //Se lee el archivo linea por linea
 }

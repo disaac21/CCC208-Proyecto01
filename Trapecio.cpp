@@ -1,11 +1,7 @@
 #include "Trapecio.h"
-#include <iostream>
-#include<string>
+
 using namespace std;
 
-Trapecio::Trapecio() {
-
-}
 Trapecio::Trapecio(int a, int b, int c, int h, int B) {
     this->a = a;
     this->b = b;
@@ -47,4 +43,17 @@ void Trapecio::seth(int h){
 }
 void Trapecio::setB(int B){
     this->B = B;
+}
+
+void Trapecio::Dibujar() {
+    ifstream ArchivoTrapecio("Trapecio.txt", ios::in);
+
+    if (!ArchivoTrapecio) {
+        cerr << "No se pudo abrir el archivo" << endl;
+        exit(EXIT_FAILURE);
+    }
+
+    string line;
+    while (getline(ArchivoTrapecio, line))
+        cout << line << endl;
 }

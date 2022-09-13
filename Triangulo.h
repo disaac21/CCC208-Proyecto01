@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
-#include<string>
+#include <string>
+#include <fstream>
+
 using namespace std;
 
 class Triangulo {
@@ -10,7 +12,6 @@ class Triangulo {
     int h;
 
     public:
-        Triangulo();
         Triangulo(int a, int b, int c, int h);
         ~Triangulo();
 
@@ -24,4 +25,5 @@ class Triangulo {
         void setc(int);
         void seth(int);
 
+        void Dibujar();
 };

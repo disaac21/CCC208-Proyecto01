@@ -1,11 +1,7 @@
 #include "Cuadrado.h"
-#include <iostream>
-#include<string>
+
 using namespace std;
 
-Cuadrado::Cuadrado() {
-
-}
 Cuadrado::Cuadrado(int a) {
     this->a = a;
 }
@@ -19,4 +15,17 @@ int Cuadrado::geta() const {
 
 void Cuadrado::seta(int a){
     this->a = a;
+}
+
+void Cuadrado::Dibujar() {
+    ifstream ArchivoCuadrado("Cuadrado.txt", ios::in);
+
+    if (!ArchivoCuadrado) {
+        cerr << "No se pudo abrir el archivo" << endl;
+        exit(EXIT_FAILURE);
+    }
+
+    string line;
+    while (getline(ArchivoCuadrado, line))
+        cout << line << endl;
 }

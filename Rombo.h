@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
-#include<string>
+#include <string>
+#include <fstream>
+
 using namespace std;
 
 class Rombo {
@@ -9,7 +11,6 @@ class Rombo {
     int D;
 
     public:
-        Rombo();
         Rombo(int a, int d, int D);
         ~Rombo();
 
@@ -21,4 +22,5 @@ class Rombo {
         void setd(int);
         void setD(int);
 
+        void Dibujar();
 };

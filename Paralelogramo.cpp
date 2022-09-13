@@ -1,11 +1,7 @@
 #include "Paralelogramo.h"
-#include <iostream>
-#include<string>
+
 using namespace std;
 
-Paralelogramo::Paralelogramo() {
-
-}
 Paralelogramo::Paralelogramo(int a, int b, int h) {
     this->a = a;
     this->b = b;
@@ -33,4 +29,17 @@ void Paralelogramo::setb(int b){
 }
 void Paralelogramo::seth(int h){
     this->h = h;
+}
+
+void Paralelogramo::Dibujar() {
+    ifstream ArchivoParalelogramo("Paralelogramo.txt", ios::in);
+
+    if (!ArchivoParalelogramo) {
+        cerr << "No se pudo abrir el archivo" << endl;
+        exit(EXIT_FAILURE);
+    }
+
+    string line;
+    while (getline(ArchivoParalelogramo, line))
+        cout << line << endl;
 }

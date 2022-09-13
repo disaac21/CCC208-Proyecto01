@@ -1,11 +1,7 @@
 #include "Circulo.h"
-#include <iostream>
-#include<string>
+
 using namespace std;
 
-Circulo::Circulo() {
-
-}
 Circulo::Circulo(int r) {
     this->r = r;
 }
@@ -19,4 +15,17 @@ int Circulo::getr() const {
 
 void Circulo::setr(int r){
     this->r = r;
+}
+
+void Circulo::Dibujar() {
+    ifstream ArchivoCirculo("Circulo.txt", ios::in);
+
+    if (!ArchivoCirculo) {
+        cerr << "No se pudo abrir el archivo" << endl;
+        exit(EXIT_FAILURE);
+    }
+
+    string line;
+    while (getline(ArchivoCirculo, line))
+        cout << line << endl;
 }

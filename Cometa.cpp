@@ -1,11 +1,7 @@
 #include "Cometa.h"
-#include <iostream>
-#include<string>
+
 using namespace std;
 
-Cometa::Cometa() {
-
-}
 Cometa::Cometa(int a, int b, int d, int D) {
     this->a = a;
     this->b = b;
@@ -40,4 +36,17 @@ void Cometa::setd(int d){
 }
 void Cometa::setD(int D){
     this->D = D;
+}
+
+void Cometa::Dibujar() {
+    ifstream ArchivoCometa("Cometa.txt", ios::in);
+
+    if (!ArchivoCometa) {
+        cerr << "No se pudo abrir el archivo" << endl;
+        exit(EXIT_FAILURE);
+    }
+
+    string line;
+    while (getline(ArchivoCometa, line))
+        cout << line << endl;
 }

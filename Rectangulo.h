@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
-#include<string>
+#include <string>
+#include <fstream>
+
 using namespace std;
 
 class Rectangulo {
@@ -8,7 +10,6 @@ class Rectangulo {
     int b;
 
     public:
-        Rectangulo();
         Rectangulo(int a, int b);
         ~Rectangulo();
 
@@ -18,4 +19,5 @@ class Rectangulo {
         void seta(int);
         void setb(int);
 
+        void Dibujar();
 };

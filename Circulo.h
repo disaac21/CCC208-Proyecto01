@@ -1,13 +1,14 @@
 #pragma once
 #include <iostream>
-#include<string>
+#include <string>
+#include <fstream>
+
 using namespace std;
 
 class Circulo {
     int r;
 
     public:
-        Circulo();
         Circulo(int r);
         ~Circulo();
 
@@ -15,4 +16,5 @@ class Circulo {
 
         void setr(int);
 
+        void Dibujar();
 };

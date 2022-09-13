@@ -2,18 +2,26 @@
 #include <string>
 #include <vector>
 #include <fstream>
+#include <iomanip>
 #include <windows.h>
+#include "Circulo.h"
+#include "Cometa.h"
+#include "Cuadrado.h"
+#include "Paralelogramo.h"
+#include "Rectangulo.h"
+#include "Rombo.h"
+#include "Trapecio.h"
+#include "Triangulo.h"
 
 using namespace std;
 
 //Declaracion -----------------------------------------------------
-//void mainPrima(); Idea de funcion en espera...
-void SwitchFiguras(int argc, char* argv[]);
+void MainFunciones(int argc, char* argv[]);
 void MensajeError();
-int CargarArchivo(int argc, char* argv[]);
+int SwitchFiguras(int argc, char* argv[]);
 
 //Definicion ------------------------------------------------------
-void SwitchFiguras(int argc, char* argv[]) { //argc y argv siguen la misma logica mencionada anteriormente, argc(# de argumentos) y argv(array de strings)
+void MainFunciones(int argc, char* argv[]) { //argc y argv siguen la misma logica mencionada anteriormente, argc(# de argumentos) y argv(array de strings)
     SetConsoleCP(CP_UTF8);
     SetConsoleOutputCP(CP_UTF8);
 
@@ -21,7 +29,7 @@ void SwitchFiguras(int argc, char* argv[]) { //argc y argv siguen la misma logic
         MensajeError();
     }else {
         cout << endl;
-        CargarArchivo(argc, argv);
+        SwitchFiguras(argc, argv);
     }
 }
 
@@ -35,152 +43,107 @@ La implementacion de la gráfica debe estar en un metodo llamado Dibujar en la cl
 TAMBIÉN: Revisar Referencias
 */
 
-int CargarArchivo(int argc, char* argv[]) {
+int SwitchFiguras(int argc, char* argv[]) {
     string figura = argv[1]; //Pasamos los argumentos a string para poder comparar con const strings con facilidad
 
     if (figura == "triangulo") {
         if (argc == 6) {
-            ifstream ArchivoTriangulo("Triangulo.txt", ios::in);
-
-            if (!ArchivoTriangulo) {
-                cerr << "No se pudo abrir el archivo" << endl;
-                exit(EXIT_FAILURE);
-            } //Se verifica si el archivo se abrio correctamente
-
-            string line;
-            while (getline(ArchivoTriangulo, line))
-                cout << line << endl; //Se lee el archivo linea por linea
+            Triangulo triangulo(stoi(argv[2]), stoi(argv[3]), stoi(argv[4]), stoi(argv[5])); //stoi() convierte strings a int
+            triangulo.Dibujar(); //Llama a la funcion Dibujar() de la clase
         }
         else {
             MensajeError();
         }
+
+        return 1; //return para que finalice la funcion en dicho lugar
     }
 
     if (figura == "paralelogramo") {
         if (argc == 5) {
-            ifstream ArchivoParalelogramo("Paralelogramo.txt", ios::in);
-
-            if (!ArchivoParalelogramo) {
-                cerr << "No se pudo abrir el archivo" << endl;
-                exit(EXIT_FAILURE);
-            }
-
-            string line;
-            while (getline(ArchivoParalelogramo, line))
-                cout << line << endl;
+            Paralelogramo paralelogramo(stoi(argv[2]), stoi(argv[3]), stoi(argv[4]));
+            paralelogramo.Dibujar();
         }
         else {
             MensajeError();
         }
+
+        return 1;
     }
 
     if (figura == "rectangulo") {
         if (argc == 4) {
-            ifstream ArchivoRectangulo("Rectangulo.txt", ios::in);
-
-            if (!ArchivoRectangulo) {
-                cerr << "No se pudo abrir el archivo" << endl;
-                exit(EXIT_FAILURE);
-            }
-
-            string line;
-            while (getline(ArchivoRectangulo, line))
-                cout << line << endl;
+            Rectangulo rectangulo(stoi(argv[2]), stoi(argv[3]));
+            rectangulo.Dibujar();
         }
         else {
             MensajeError();
         }
+
+        return 1;
     }
 
     if (figura == "cuadrado") {
         if (argc == 3) {
-            ifstream ArchivoCuadrado("Cuadrado.txt", ios::in);
-
-            if (!ArchivoCuadrado) {
-                cerr << "No se pudo abrir el archivo" << endl;
-                exit(EXIT_FAILURE);
-            }
-
-            string line;
-            while (getline(ArchivoCuadrado, line))
-                cout << line << endl;
+            Cuadrado cuadrado(stoi(argv[2]));
+            cuadrado.Dibujar();
         }
         else {
             MensajeError();
         }
+
+        return 1;
     }
 
     if (figura == "rombo") {
         if (argc == 5) {
-            ifstream ArchivoRombo("Rombo.txt", ios::in);
-
-            if (!ArchivoRombo) {
-                cerr << "No se pudo abrir el archivo" << endl;
-                exit(EXIT_FAILURE);
-            }
-
-            string line;
-            while (getline(ArchivoRombo, line))
-                cout << line << endl;
+            Rombo rombo(stoi(argv[2]), stoi(argv[3]), stoi(argv[4]));
+            rombo.Dibujar();
         }
         else {
             MensajeError();
         }
+
+        return 1;
     }
 
     if (figura == "cometa") {
         if (argc == 6) {
-            ifstream ArchivoCometa("Cometa.txt", ios::in);
-
-            if (!ArchivoCometa) {
-                cerr << "No se pudo abrir el archivo" << endl;
-                exit(EXIT_FAILURE);
-            }
-
-            string line;
-            while (getline(ArchivoCometa, line))
-                cout << line << endl;
+            Cometa cometa(stoi(argv[2]), stoi(argv[3]), stoi(argv[4]), stoi(argv[5]));
+            cometa.Dibujar();
         }
         else {
             MensajeError();
         }
+
+        return 1;
     }
 
     if (figura == "trapecio") {
         if (argc == 7) {
-            ifstream ArchivoTrapecio("Trapecio.txt", ios::in);
-
-            if (!ArchivoTrapecio) {
-                cerr << "No se pudo abrir el archivo" << endl;
-                exit(EXIT_FAILURE);
-            }
-
-            string line;
-            while (getline(ArchivoTrapecio, line))
-                cout << line << endl;
+            Trapecio trapecio(stoi(argv[2]), stoi(argv[3]), stoi(argv[4]), stoi(argv[5]), stoi(argv[6]));
+            trapecio.Dibujar();
         }
         else {
             MensajeError();
         }
+
+        return 1;
     }
 
     if (figura == "circulo") {
         if (argc == 3) {
-            ifstream ArchivoCirculo("Circulo.txt", ios::in);
-
-            if (!ArchivoCirculo) {
-                cerr << "No se pudo abrir el archivo" << endl;
-                exit(EXIT_FAILURE);
-            }
-
-            string line;
-            while (getline(ArchivoCirculo, line))
-                cout << line << endl;
+            Circulo circulo(stoi(argv[2]));
+            circulo.Dibujar();
         }
         else {
             MensajeError();
         }
+
+        return 1;
     }
+
+    MensajeError(); //Si no se cumple ninguno de los if se manda error, asi se abarcan todos los casos de error
+    return 0;
 };
 
 void MensajeError() {

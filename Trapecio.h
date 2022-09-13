@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
-#include<string>
+#include <string>
+#include <fstream>
+
 using namespace std;
 
 class Trapecio {
@@ -11,7 +13,6 @@ class Trapecio {
     int B;
 
     public:
-        Trapecio();
         Trapecio(int a, int b, int c, int h, int B);
         ~Trapecio();
 
@@ -27,4 +28,5 @@ class Trapecio {
         void seth(int);
         void setB(int);
 
+        void Dibujar();
 };

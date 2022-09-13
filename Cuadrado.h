@@ -1,13 +1,14 @@
 #pragma once
 #include <iostream>
-#include<string>
+#include <string>
+#include <fstream>
+
 using namespace std;
 
 class Cuadrado {
     int a;
 
     public:
-        Cuadrado();
         Cuadrado(int a);
         ~Cuadrado();
 
@@ -15,4 +16,5 @@ class Cuadrado {
 
         void seta(int);
 
+        void Dibujar();
 };
