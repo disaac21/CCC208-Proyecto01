@@ -40,6 +40,27 @@ void Rombo::Dibujar() {
     }
 
     string line;
-    while (getline(ArchivoRombo, line))
-        cout << line << endl;
+    while (getline(ArchivoRombo, line)) {
+        regex ea("\\b(IIaII)");
+        string output = regex_replace(line, ea, centerString(to_string(a), 5));
+        regex ed("\\b(IIdII)");
+        output = regex_replace(output, ed, centerString(to_string(d), 5));
+        regex eD("\\b(IIDII)");
+        output = regex_replace(output, eD, centerString(to_string(D), 5));
+
+        regex eArea("\\b(IIareaII)");
+        output = regex_replace(output, eArea, centerString(to_string(D*d/2), 15));
+        regex ePeri("\\b(IIperimetroII)");
+        output = regex_replace(output, ePeri, centerString(to_string(4*a), 17));
+        regex emidA("\\b(IIID\\*dIII)");
+        output = regex_replace(output, emidA, centerString(to_string(D*d), 9));
+
+        cout << output << endl;
+    }
+}
+
+string Rombo::centerString(string input, int width) {
+    int spaces = (width - input.length()) / 2;
+    string mid = string(spaces, ' ') + input;
+    return mid + string((width - mid.length()), ' ');
 }

@@ -2,6 +2,8 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <regex>
+#include <iterator>
 
 using namespace std;
 
@@ -17,4 +19,5 @@ class Circulo {
         void setr(int);
 
         void Dibujar();
+        string centerString(string input, int width);
 };

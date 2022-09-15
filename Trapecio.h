@@ -2,6 +2,8 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <regex>
+#include <iterator>
 
 using namespace std;
 
@@ -29,4 +31,5 @@ class Trapecio {
         void setB(int);
 
         void Dibujar();
+        string centerString(string input, int width);
 };

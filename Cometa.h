@@ -2,6 +2,8 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <regex>
+#include <iterator>
 
 using namespace std;
 
@@ -26,4 +28,5 @@ class Cometa {
         void setD(int);
 
         void Dibujar();
+        string centerString(string input, int width);
 };

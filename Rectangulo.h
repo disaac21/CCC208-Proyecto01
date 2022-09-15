@@ -2,6 +2,8 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <regex>
+#include <iterator>
 
 using namespace std;
 
@@ -20,4 +22,5 @@ class Rectangulo {
         void setb(int);
 
         void Dibujar();
+        string centerString(string input, int width);
 };
