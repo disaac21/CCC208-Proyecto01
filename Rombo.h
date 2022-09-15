@@ -25,5 +25,6 @@ class Rombo {
         void setD(int);
 
         void Dibujar();
+        string CortarDecimales(string);
         string centerString(string input, int width);
 };

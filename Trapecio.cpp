@@ -45,6 +45,11 @@ void Trapecio::setB(int B){
     this->B = B;
 }
 
+string Trapecio::CortarDecimales(string tostring) {
+    tostring = tostring.substr(0, tostring.length()-4);
+    return tostring;
+}
+
 void Trapecio::Dibujar() {
     ifstream ArchivoTrapecio("Trapecio.txt", ios::in);
 
@@ -71,14 +76,14 @@ void Trapecio::Dibujar() {
         regex emidP2("\\b(IIa\\+cII)");
         output = regex_replace(output, emidP2, centerString(to_string(a+c), 7));
         regex ePeri("\\b(IIperimetroII)");
-        output = regex_replace(output, ePeri, centerString(to_string(B+b+a+c), 26));
+        output = regex_replace(output, ePeri, centerString(to_string(B+b+a+c), 24));
 
         regex emidA1("\\b(IIIB\\+bIII)");
         output = regex_replace(output, emidA1, centerString(to_string(B+b), 9));
         regex emidA2("\\b(IIIB\\+b\\*hIII)");
         output = regex_replace(output, emidA2, centerString(to_string((B+b)*h), 11));
         regex eArea("\\b(IIareaII)");
-        output = regex_replace(output, eArea, centerString(to_string(((B+b)*h)/2), 25));
+        output = regex_replace(output, eArea, centerString(CortarDecimales(to_string(((B+b)*h)/2.0)), 24));
 
         cout << output << endl;
     }

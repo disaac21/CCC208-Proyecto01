@@ -23,6 +23,11 @@ void Circulo::setr(int r){
     this->r = r;
 }
 
+string Circulo::CortarDecimales(string tostring) {
+    tostring = tostring.substr(0, tostring.length()-4);
+    return tostring;
+}
+
 void Circulo::Dibujar() {
     ifstream ArchivoCirculo("Circulo.txt", ios::in);
 
@@ -37,14 +42,16 @@ void Circulo::Dibujar() {
         regex e("\\b(IIrII)");
         string output = regex_replace(line, e, centerString(to_string(r), 5));
         regex e1("\\b(III3.14\\*rIII)");
-        output = regex_replace(output, e1, centerString(to_string(3.14 * r), 12));
+        
+        
+        output = regex_replace(output, e1, centerString(CortarDecimales(to_string(3.14 * r)), 12));
         regex e2("\\b(IIperimetroII)");
-        output = regex_replace(output, e2, centerString(to_string(2 * 3.14 * r), 17));
+        output = regex_replace(output, e2, centerString(CortarDecimales(to_string(2 * 3.14 * r)), 17));
         
         regex e3("\\b(IIr\\*rII)");
         output = regex_replace(output, e3, centerString(to_string(r * r), 7));
         regex e4("\\b(IIareaII)");
-        output = regex_replace(output, e4, centerString(to_string(3.14 * r * r), 15));
+        output = regex_replace(output, e4, centerString(CortarDecimales(to_string(3.14 * r * r)), 15));
         cout << output << endl;
     }
 }

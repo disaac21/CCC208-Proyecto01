@@ -64,7 +64,7 @@ void Cometa::Dibujar() {
         regex ePeri("\\b(IIperimetroooII)");
         output = regex_replace(output, ePeri, centerString(to_string(2*(b+a)), 17));
         regex eArea("\\b(IIarearespuII)");
-        output = regex_replace(output, eArea, centerString(to_string(D*d/2), 15));
+        output = regex_replace(output, eArea, centerString(to_string(D*d/2.0), 15));
 
         cout << output << endl;
     }

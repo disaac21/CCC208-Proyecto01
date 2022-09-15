@@ -28,5 +28,6 @@ class Triangulo {
         void seth(int);
 
         void Dibujar();
+        string CortarDecimales(string);
         string centerString(string input, int width);
 };

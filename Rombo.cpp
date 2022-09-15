@@ -31,6 +31,11 @@ void Rombo::setD(int D){
     this->D = D;
 }
 
+string Rombo::CortarDecimales(string tostring) {
+    tostring = tostring.substr(0, tostring.length()-4);
+    return tostring;
+}
+
 void Rombo::Dibujar() {
     ifstream ArchivoRombo("Rombo.txt", ios::in);
 
@@ -49,7 +54,7 @@ void Rombo::Dibujar() {
         output = regex_replace(output, eD, centerString(to_string(D), 5));
 
         regex eArea("\\b(IIareaII)");
-        output = regex_replace(output, eArea, centerString(to_string(D*d/2), 15));
+        output = regex_replace(output, eArea, centerString(CortarDecimales(to_string(D*d/2.0)), 15));
         regex ePeri("\\b(IIperimetroII)");
         output = regex_replace(output, ePeri, centerString(to_string(4*a), 17));
         regex emidA("\\b(IIID\\*dIII)");

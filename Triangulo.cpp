@@ -38,6 +38,11 @@ void Triangulo::seth(int h){
     this->h = h;
 }
 
+string Triangulo::CortarDecimales(string tostring) {
+    tostring = tostring.substr(0, tostring.length()-4);
+    return tostring;
+}
+
 void Triangulo::Dibujar() {
     ifstream ArchivoTriangulo("Triangulo.txt", ios::in);
 
@@ -65,7 +70,7 @@ void Triangulo::Dibujar() {
         regex emidA("\\b(IIb\\*hII)");
         output = regex_replace(output, emidA, centerString(to_string(b*h), 7));
         regex eArea("\\b(IIareaII)");
-        output = regex_replace(output, eArea, centerString(to_string(b*h/2), 15));
+        output = regex_replace(output, eArea, centerString(CortarDecimales(to_string(b*h/2.0)), 15));
 
         cout << output << endl;
     }

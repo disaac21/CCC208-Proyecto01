@@ -31,5 +31,6 @@ class Trapecio {
         void setB(int);
 
         void Dibujar();
+        string CortarDecimales(string);
         string centerString(string input, int width);
 };
